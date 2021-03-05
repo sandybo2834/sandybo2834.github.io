@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .tips {
+            display: none;
+        }
+    </style>
+    <script>
+        var isvc = !!navigator.userAgent.match(/MicroMessenger/i);
+        var getQueryString = function (name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return decodeURIComponent(r[2]);
+            }
+            return null;
+        }
+        var getDomain = function (){
+            var domain = document.domain;
+            domain = domain.match(/[^\.]*\.[^.]*$/)[0];
+            return domain;
+        }
+    </script>
+</head>
+<body>
+    <div class="tips"
+        style="position:fixed;width:100%;height:100%;background:#7a7a7a url('./wxbg.png') no-repeat top center;background-size:contain;">
+    </div>
+</body>
+<script>
+    if (!isvc) {
+        var ic = getQueryString('c');
+        var domain = getDomain()
+        var jumpto = "8838s.com"
+        alert("https://www."+ jumpto)
+        if(domain.indexOf("8831s") != -1){ jumpto = "8863ss.com"}
+        if(domain.indexOf("8863n") != -1){ jumpto = "8863ss.com"}
+        if (ic) {
+            window.location.href = "https://www."+ jumpto + "?c=" + ic
+            // window.location.href = "https://www."+ jumpto + "?c=" + ic
+        } else {
+            window.location.href = "https://www."+ jumpto
+            // window.location.href = "https://home."+ domain
+        }
+    } else {
+        document.querySelector('.tips').style.display = "block"
+    }
+</script>
+
+</html>
