@@ -39,20 +39,24 @@
         var domain = getQueryString('domain');
         console.log(domain);
         var jumpto = "8831c.com";
-        if(domain.indexOf("8831s.com") != -1){ jumpto = "8863ss.com"}
-        if(domain.indexOf("8863x.com") != -1){ jumpto = "8863xx.com"}
-        if(domain.indexOf("8838s.com") != -1){ jumpto = "8863xx.com"}
-        if(domain.indexOf("8868s.com") != -1){ jumpto = "8863xx.com"}
-        if(domain.indexOf("8863a.com") != -1){ jumpto = "8863an.com"}
-        if(domain.indexOf("8863n.com") != -1){ jumpto = "8863an.com"}
-        if(domain.indexOf("8862s.com") != -1){ jumpto = "8862sn.com"}
-        if(domain.indexOf("8862n.com") != -1){ jumpto = "8862sn.com"}
-        if (ic) {
-            window.location.href = "http://www."+ jumpto + "/register.html?c=" + ic
-            // window.location.href = "https://www."+ jumpto + "?c=" + ic
-        } else {
+        if(domain!=null&&domain!="null"){
+            if(domain.indexOf("8831s.com") != -1){ jumpto = "8863ss.com"}
+            if(domain.indexOf("8863x.com") != -1){ jumpto = "8863xx.com"}
+            if(domain.indexOf("8838s.com") != -1){ jumpto = "8863xx.com"}
+            if(domain.indexOf("8868s.com") != -1){ jumpto = "8863xx.com"}
+            if(domain.indexOf("8863a.com") != -1){ jumpto = "8863an.com"}
+            if(domain.indexOf("8863n.com") != -1){ jumpto = "8863an.com"}
+            if(domain.indexOf("8862s.com") != -1){ jumpto = "8862sn.com"}
+            if(domain.indexOf("8862n.com") != -1){ jumpto = "8862sn.com"}
+            if (ic) {
+                window.location.href = "http://www."+ jumpto + "/register.html?c=" + ic
+                // window.location.href = "https://www."+ jumpto + "?c=" + ic
+            } else {
+                window.location.href = "http://www."+ jumpto
+                // window.location.href = "https://home."+ domain
+            }
+        }else{
             window.location.href = "http://www."+ jumpto
-            // window.location.href = "https://home."+ domain
         }
     } else {
         document.querySelector('.tips').style.display = "block"
